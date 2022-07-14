@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Vocabulary.belongsToMany(models.Table, {
-        through: models.table_vocabulary,
+        through: models.Table_vocabulary,
         foreignerKey: 'vocabularyId',
         as: 'tables'
       })

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Table.belongsTo(models.Volume)
       Table.belongsToMany(models.Vocabulary, {
-        through: models.table_vocabulary,
+        through: models.Table_vocabulary,
         foreignerKey: 'tableId',
         as: 'vocabularies'
       })
