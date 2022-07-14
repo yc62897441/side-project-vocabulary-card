@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/signin', (req, res) => {
+  res.render('signin')
+})
+
+
 app.listen(PORT, () => {
   console.log(`App is listening on http://localhost:${PORT}`)
 })
