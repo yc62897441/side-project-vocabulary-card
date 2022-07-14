@@ -22,6 +22,9 @@ app.post('/signin', (req, res) => {
   console.log(req.body)
   res.redirect('/')
 })
+app.get('/signup', (req, res) => {
+  res.render('signup')
+})
 
 app.listen(PORT, () => {
   console.log(`App is listening on http://localhost:${PORT}`)

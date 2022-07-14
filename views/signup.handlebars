@@ -1,5 +1,9 @@
-<form action="/signin" method="post">
-  <h1>Sign In</h1>
+<form action="/signup" method="post">
+<h1>Sign Up</h1>
+  <div class="mb-3">
+    <label for="InputName" class="form-label">User Name</label>
+    <input type="text" name="name" class="form-control" id="InputName" required>
+  </div>
   <div class="mb-3">
     <label for="InputEmail" class="form-label">Email</label>
     <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" required>
@@ -9,6 +13,10 @@
     <label for="InputPassword" class="form-label">Password</label>
     <input type="password" name="password" class="form-control" id="InputPassword" required>
   </div>
+  <div class="mb-3">
+    <label for="InputPasswordConfirm" class="form-label">Password Confirm</label>
+    <input type="password" name="passwordConfirm" class="form-control" id="InputPasswordConfirm" required>
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-  <div>Don't have an account? <a href="/signup">Sign Up here</a></div>
+  <div>Already have an account? <a href="/signin">Sign In here</a></div>
 </form>
