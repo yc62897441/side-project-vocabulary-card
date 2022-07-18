@@ -33,7 +33,7 @@ section {
   font-size: 2.5rem;
 }
 
-.word_panel .word_en {
+.word_panel .word_hidden {
   visibility: hidden;
 }
 
