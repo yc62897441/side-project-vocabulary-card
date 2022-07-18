@@ -1,12 +1,4 @@
 <div class="vocabulary_containers">
-  {{!-- <div class="word_panel word_panel_en">
-    <p class="word_en word_hidden">hormone</p>
-  </div>
-  <div class="word_panel word_panel_ch">
-    <p class="word_ch">
-      noun[C] 荷爾蒙、激素
-    </p>
-  </div> --}}
   {{#each vocabularies }}
   <div>
     <div class="word_panel word_panel_en">
@@ -24,8 +16,8 @@
 <div class="controll_bar">
   <div>
     <div class="control_btn_wrapper">
-      <input class="display_none" id="en_ch_shift" type="checkbox">
-      <label class="btn btn-primary" for="en_ch_shift">選單</label>
+      <input class="display_none" id="" type="checkbox">
+      <label class="btn btn-primary" for="">選單</label>
     </div>
     <div class="control_btn_wrapper">
       <input class="display_none" id="en_ch_shift" type="checkbox">
@@ -37,8 +29,11 @@
       <button class="btn btn-primary btn-previous">上一個</button>
     </div>
     <div class="control_btn_wrapper">
-      <input class="display_none" id="en_ch_shift" type="checkbox">
-      <label class="btn btn-primary" for="en_ch_shift">註解</label>
+      <!-- Button trigger modal -->
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal">
+        註解
+      </button>
+
     </div>
     <div class="control_btn_wrapper">
       <input class="display_none" id="show_shift" type="checkbox">
@@ -46,6 +41,24 @@
     </div>
     <div class="control_btn_wrapper">
       <button class="btn btn-primary btn-next">下一個</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        {{#each vocabularies }}
+        <div class="word_note">
+          {{this.note}}
+        </div>
+        {{/each}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>

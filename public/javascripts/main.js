@@ -1,6 +1,8 @@
 const vocabulary_containers = document.querySelector('.vocabulary_containers')
+const modal_body = document.querySelector('.modal-body')
 const word_ens = document.querySelectorAll('.word_en')
 const word_chs = document.querySelectorAll('.word_ch')
+const word_notes = document.querySelectorAll('.word_note')
 const btn_en_ch_shift = document.querySelector('.btn-en_ch_shift')
 const btn_show_shift = document.querySelector('.btn-show_shift')
 const btn_previous = document.querySelector('.btn-previous')
@@ -8,6 +10,7 @@ const btn_next = document.querySelector('.btn-next')
 
 for (let i = 1; i < vocabulary_containers.children.length; i++) {
   vocabulary_containers.children[i].classList.add('display_none')
+  modal_body.children[i].classList.add('display_none')
 }
 
 const model = {
@@ -51,6 +54,8 @@ const controller = {
     if (model.current_word_index > 0) {
       vocabulary_containers.children[model.current_word_index].classList.add('display_none')
       vocabulary_containers.children[model.current_word_index - 1].classList.remove('display_none')
+      modal_body.children[model.current_word_index].classList.add('display_none')
+      modal_body.children[model.current_word_index - 1].classList.remove('display_none')
       model.current_word_index = model.current_word_index - 1
     } else {
       return
@@ -60,6 +65,8 @@ const controller = {
     if (model.current_word_index < model.words_amount - 1) {
       vocabulary_containers.children[model.current_word_index].classList.add('display_none')
       vocabulary_containers.children[model.current_word_index + 1].classList.remove('display_none')
+      modal_body.children[model.current_word_index].classList.add('display_none')
+      modal_body.children[model.current_word_index + 1].classList.remove('display_none')
       model.current_word_index = model.current_word_index + 1
     } else {
       return
