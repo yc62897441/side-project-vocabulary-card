@@ -23,6 +23,10 @@ section {
   margin: 3% 0;
 }
 
+.vocabulary_containers >div {
+height: 100%;
+}
+
 .word_panel {
   height: 45%;
   margin: 2% 0;

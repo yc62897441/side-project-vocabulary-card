@@ -1,14 +1,25 @@
 <div class="vocabulary_containers">
-  <div class="word_panel word_panel_en">
+  {{!-- <div class="word_panel word_panel_en">
     <p class="word_en word_hidden">hormone</p>
   </div>
   <div class="word_panel word_panel_ch">
     <p class="word_ch">
       noun[C] 荷爾蒙、激素
     </p>
+  </div> --}}
+  {{#each vocabularies }}
+  <div>
+    <div class="word_panel word_panel_en">
+      <p class="word_en word_hidden">{{this.en_name}}</p>
+    </div>
+    <div class="word_panel word_panel_ch">
+      <p class="word_ch">
+        {{this.ch_name}}
+      </p>
+    </div>
   </div>
+  {{/each}}
 </div>
-
 
 <div class="controll_bar">
   <div>
@@ -23,7 +34,7 @@
   </div>
   <div>
     <div class="control_btn_wrapper">
-      <button class="btn btn-primary">上一個</button>
+      <button class="btn btn-primary btn-previous">上一個</button>
     </div>
     <div class="control_btn_wrapper">
       <input class="display_none" id="en_ch_shift" type="checkbox">
@@ -34,7 +45,7 @@
       <label class="btn btn-primary btn-show_shift" for="show_shift">顯示 </label>
     </div>
     <div class="control_btn_wrapper">
-      <button class="btn btn-primary">下一個</button>
+      <button class="btn btn-primary btn-next">下一個</button>
     </div>
   </div>
 </div>
