@@ -57,6 +57,9 @@ const controller = {
       modal_body.children[model.current_word_index].classList.add('display_none')
       modal_body.children[model.current_word_index - 1].classList.remove('display_none')
       model.current_word_index = model.current_word_index - 1
+
+      // 切換到上、下一個單字時，將單字自動轉為 hidden 狀態
+      this.previous_next_auto_word_hidden_on()
     } else {
       return
     }
@@ -68,9 +71,20 @@ const controller = {
       modal_body.children[model.current_word_index].classList.add('display_none')
       modal_body.children[model.current_word_index + 1].classList.remove('display_none')
       model.current_word_index = model.current_word_index + 1
+
+      // 切換到上、下一個單字時，將單字自動轉為 hidden 狀態
+      this.previous_next_auto_word_hidden_on()
     } else {
       return
     }
+  },
+  previous_next_auto_word_hidden_on: function () {
+    if (model.word_hidden === 'word_en') {
+      word_ens.forEach(word_en => word_en.classList.add('word_hidden'))
+    } else if (model.word_hidden === 'word_ch') {
+      word_chs.forEach(word_ch => word_ch.classList.add('word_hidden'))
+    }
+    model.word_hidden_on = false
   }
 }
 
