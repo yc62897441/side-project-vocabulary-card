@@ -15,7 +15,7 @@ for (let i = 1; i < vocabulary_containers.children.length; i++) {
 
 const model = {
   word_hidden: 'word_en',
-  word_hidden_on: false,
+  word_hidden_on: true,
   current_word_index: 0,
   words_amount: vocabulary_containers.children.length
 }
@@ -31,18 +31,18 @@ const controller = {
       word_chs.forEach(word_ch => word_ch.classList.remove('word_hidden'))
       model.word_hidden = 'word_en'
     }
-    model.word_hidden_on = false
+    model.word_hidden_on = true
   },
   show_shift: function (event) {
-    if (!model.word_hidden_on) {
-      model.word_hidden_on = true
+    if (model.word_hidden_on) {
+      model.word_hidden_on = false
       if (model.word_hidden === 'word_en') {
         word_ens.forEach(word_en => word_en.classList.remove('word_hidden'))
       } else if (model.word_hidden === 'word_ch') {
         word_chs.forEach(word_ch => word_ch.classList.remove('word_hidden'))
       }
     } else {
-      model.word_hidden_on = false
+      model.word_hidden_on = true
       if (model.word_hidden === 'word_en') {
         word_ens.forEach(word_en => word_en.classList.add('word_hidden'))
       } else if (model.word_hidden === 'word_ch') {
@@ -84,7 +84,7 @@ const controller = {
     } else if (model.word_hidden === 'word_ch') {
       word_chs.forEach(word_ch => word_ch.classList.add('word_hidden'))
     }
-    model.word_hidden_on = false
+    model.word_hidden_on = true
   }
 }
 
