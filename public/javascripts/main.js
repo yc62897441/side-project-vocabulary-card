@@ -1,8 +1,11 @@
 const vocabulary_containers = document.querySelector('.vocabulary_containers')
 const modal_body = document.querySelector('.modal-body')
+const menu_wrapper = document.querySelector('.menu_wrapper')
 const word_ens = document.querySelectorAll('.word_en')
 const word_chs = document.querySelectorAll('.word_ch')
 const word_notes = document.querySelectorAll('.word_note')
+const btn_menu = document.querySelector('.btn-menu')
+const btn_menu_input_checkbox = document.querySelector('#menu')
 const btn_en_ch_shift = document.querySelector('.btn-en_ch_shift')
 const btn_show_shift = document.querySelector('.btn-show_shift')
 const btn_previous = document.querySelector('.btn-previous')
@@ -85,6 +88,13 @@ const controller = {
       word_chs.forEach(word_ch => word_ch.classList.add('word_hidden'))
     }
     model.word_hidden_on = true
+  },
+  menu_input_checkbox: function(event) {
+    if (menu_wrapper.classList.contains('display_none')) {
+      menu_wrapper.classList.remove('display_none')
+    } else {
+      menu_wrapper.classList.add('display_none')
+    }
   }
 }
 
@@ -102,4 +112,8 @@ btn_previous.addEventListener('click', (event) => {
 
 btn_next.addEventListener('click', (event) => {
   controller.next(event)
+})
+
+btn_menu_input_checkbox.addEventListener('change', (event) => {
+  controller.menu_input_checkbox(event)
 })

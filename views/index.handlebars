@@ -14,17 +14,17 @@
 </div>
 
 <div class="controll_bar">
-  <div>
+  <div class="controll_bar_row">
     <div class="control_btn_wrapper">
-      <input class="display_none" id="" type="checkbox">
-      <label class="btn btn-primary" for="">選單</label>
+      <input class="display_none" id="menu" type="checkbox">
+      <label class="btn btn-primary btn-menu" for="menu">選單</label>
     </div>
     <div class="control_btn_wrapper">
       <input class="display_none" id="en_ch_shift" type="checkbox">
       <label class="btn btn-primary btn-en_ch_shift" for="en_ch_shift">中英轉換</label>
     </div>
   </div>
-  <div>
+  <div class="controll_bar_row">
     <div class="control_btn_wrapper">
       <button class="btn btn-primary btn-previous">上一個</button>
     </div>
@@ -33,7 +33,6 @@
       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal">
         註解
       </button>
-
     </div>
     <div class="control_btn_wrapper">
       <input class="display_none" id="show_shift" type="checkbox">
@@ -42,6 +41,13 @@
     <div class="control_btn_wrapper">
       <button class="btn btn-primary btn-next">下一個</button>
     </div>
+  </div>
+
+  <div class="menu_wrapper display_none">
+    <ul class="menu_list">
+      <li><a href="">主選單</a></li>
+      <li><a href="">其他</a></li>
+    </ul>
   </div>
 </div>
 
