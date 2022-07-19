@@ -1,6 +1,5 @@
 const userController = require('../controllers/userController')
 
-
 const dummuyVocabulairs = [
   {
     en_name: 'hormone',
@@ -30,6 +29,10 @@ module.exports = (app, passport) => {
   
   app.get('/', authenticated, (req, res) => {
     res.render('index', { vocabularies: dummuyVocabulairs })
+  })
+
+  app.get('/volume/:id', authenticated, (req, res) => {
+    res.render('memorizing', { vocabularies: dummuyVocabulairs })
   })
 
   app.get('/signin', userController.signinPage)
